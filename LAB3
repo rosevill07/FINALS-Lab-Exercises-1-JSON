@@ -1,0 +1,15 @@
+<?php
+// Step 2: Set the header for JSON output
+header('Content-Type: application/json');
+
+// Step 3: Create an associative array with user profile information
+$userProfile = [
+    "id" => 1,
+    "name" => "Novelene",
+    "email" => "udtohannovelene_bsit@plmun.edu.ph",
+    "status" => "active"
+];
+
+// Step 4: Convert array to JSON string and output the response
+echo json_encode($userProfile);
+?>
