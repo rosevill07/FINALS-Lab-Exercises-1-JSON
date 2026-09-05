@@ -1,6 +1,6 @@
 <?php
 // Step 2: Declare a JSON string with name, age, and email
-$jsonString = '{"name":"Novelene","age":27,"email":"udtohannovelene_bsit@plmun.edu.ph"}';
+$jsonString = '{"name":"Rose","age":36,"email":"delossantosmaryrose_bsit@plmun.edu.ph"}';
 
 // Step 3: Convert into a PHP Object and a PHP Associative Array
 $objectData = json_decode($jsonString);        // Default: returns PHP Object
