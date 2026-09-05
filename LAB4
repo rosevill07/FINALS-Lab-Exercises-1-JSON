@@ -1,0 +1,20 @@
+<?php
+// Step 2: Read raw POST JSON data sent to the script
+$jsonInput = file_get_contents('php://input');
+
+// Step 3: Decode JSON into a PHP associative array
+$data = json_decode($jsonInput, true);
+
+// Fallback logic for browser testing (if no raw JSON body is sent)
+if (!$data) {
+    // Default values if opened directly in a browser without JSON payload
+    $data = [
+        "username" => "admin",
+        "password" => "1234"
+    ];
+}
+
+// Step 4: Access and display the received values
+echo "Username: " . $data['username'] . "<br>";
+echo "Password: " . $data['password'];
+?>
