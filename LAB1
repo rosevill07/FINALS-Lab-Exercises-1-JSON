@@ -1,0 +1,13 @@
+<?php
+header('Content-Type: application/json');
+
+$student = [
+    "name" => "Novelene",
+    "age" => 27,
+    "course" => "BSIT"
+];
+
+$jsonString = json_encode($student);
+
+echo $jsonString;
+?>
