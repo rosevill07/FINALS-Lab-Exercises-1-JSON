@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 5: AJAX + JSON</title>
+</head>
+<body>
+
+    <h2>User Greeting Form</h2>
+    <form id="userForm">
+        <label for="username">Enter Name:</label>
+        <input type="text" id="username" name="username" value="Rose" required>
+        <button type="submit">Send Request</button>
+    </form>
+
+    <h3>Response:</h3>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
+
+            const nameInput = document.getElementById('username').value;
+
+            // Send JSON data to PHP backend via AJAX fetch()
+            fetch('lab5_process.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: nameInput })
+            })
+            .then(response => response.json()) // Parse response as JSON
+            .then(data => {
+                // Display raw JSON response on webpage
+                document.getElementById('result').innerText = JSON.stringify(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>
