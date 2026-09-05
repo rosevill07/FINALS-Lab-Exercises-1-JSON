@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 // Step 3: Create an associative array with user profile information
 $userProfile = [
     "id" => 1,
-    "name" => "Novelene",
-    "email" => "udtohannovelene_bsit@plmun.edu.ph",
+    "name" => "Rose",
+    "email" => "delossantosmaryrose_bsit@plmun.edu.ph",
     "status" => "active"
 ];
 
